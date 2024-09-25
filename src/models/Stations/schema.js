@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-export const stationSchema = new mongoose.Schema({
+const stationSchema = new mongoose.Schema({
     id: {
         type: Number,
         required: true
@@ -33,11 +33,11 @@ export const stationSchema = new mongoose.Schema({
         required: true
     },
     created_at: {
-        type: Date,
+        type: mongoose.Schema.Types.Mixed,
         default: Date.now // Set default to current date
     },
     updated_at: {
-        type: Date,
+        type: mongoose.Schema.Types.Mixed,
         default: Date.now // Set default to current date
     },
     region_id: {
@@ -79,5 +79,11 @@ export const stationSchema = new mongoose.Schema({
     hfo_price: {
         type: Number,
         required: true
+    },
+    my_updated_at: {
+        type: Date,
+        default: Date.now
     }
 });
+
+export default stationSchema;
